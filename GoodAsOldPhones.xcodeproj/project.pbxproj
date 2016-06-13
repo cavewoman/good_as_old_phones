@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		D3B17DC91D02FDD20069D8AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B17DC81D02FDD20069D8AF /* AppDelegate.swift */; };
-		D3B17DCB1D02FDD20069D8AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B17DCA1D02FDD20069D8AF /* ViewController.swift */; };
 		D3B17DCE1D02FDD20069D8AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B17DCC1D02FDD20069D8AF /* Main.storyboard */; };
 		D3B17DD01D02FDD20069D8AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B17DCF1D02FDD20069D8AF /* Assets.xcassets */; };
 		D3B17DD31D02FDD20069D8AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B17DD11D02FDD20069D8AF /* LaunchScreen.storyboard */; };
+		D3B17DDB1D0316850069D8AF /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B17DDA1D0316850069D8AF /* ProductViewController.swift */; };
+		D3B17DDD1D031C420069D8AF /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B17DDC1D031C420069D8AF /* ContactViewController.swift */; };
+		D3B17DDF1D045CF40069D8AF /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B17DDE1D045CF40069D8AF /* ProductsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D3B17DC51D02FDD20069D8AF /* GoodAsOldPhones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodAsOldPhones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B17DC81D02FDD20069D8AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3B17DCA1D02FDD20069D8AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3B17DCD1D02FDD20069D8AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3B17DCF1D02FDD20069D8AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3B17DD21D02FDD20069D8AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3B17DD41D02FDD20069D8AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3B17DDA1D0316850069D8AF /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		D3B17DDC1D031C420069D8AF /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		D3B17DDE1D045CF40069D8AF /* ProductsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				D3B17DC81D02FDD20069D8AF /* AppDelegate.swift */,
-				D3B17DCA1D02FDD20069D8AF /* ViewController.swift */,
 				D3B17DCC1D02FDD20069D8AF /* Main.storyboard */,
 				D3B17DCF1D02FDD20069D8AF /* Assets.xcassets */,
 				D3B17DD11D02FDD20069D8AF /* LaunchScreen.storyboard */,
 				D3B17DD41D02FDD20069D8AF /* Info.plist */,
+				D3B17DDA1D0316850069D8AF /* ProductViewController.swift */,
+				D3B17DDC1D031C420069D8AF /* ContactViewController.swift */,
+				D3B17DDE1D045CF40069D8AF /* ProductsTableViewController.swift */,
 			);
 			path = GoodAsOldPhones;
 			sourceTree = "<group>";
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3B17DCB1D02FDD20069D8AF /* ViewController.swift in Sources */,
+				D3B17DDB1D0316850069D8AF /* ProductViewController.swift in Sources */,
+				D3B17DDF1D045CF40069D8AF /* ProductsTableViewController.swift in Sources */,
 				D3B17DC91D02FDD20069D8AF /* AppDelegate.swift in Sources */,
+				D3B17DDD1D031C420069D8AF /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
