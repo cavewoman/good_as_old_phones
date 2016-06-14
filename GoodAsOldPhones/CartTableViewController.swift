@@ -10,25 +10,29 @@ import UIKit
 
 class CartTableViewController: UITableViewController {
 
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var totalLabel: UILabel!
     var ordersInCart: [Order]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.tableHeaderView = headerView
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let product = Product()
-        product.name = "1907 Wall Set"
-        product.productImage = "phone-fullscreen1"
-        product.cellImage = "image-cell1"
-        product.price = 59.99
+        // read orders from disk
         
-        let order = Order()
-        order.product = product
+        ordersInCart = Orders.readOrdersFromArchive()
+        if(ordersInCart == nil) {
+            ordersInCart = []
+        }
         
-        ordersInCart = [order]
+        tableView.reloadData()
+        
+        updateTotal()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,9 +55,25 @@ class CartTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            ordersInCart?.removeAtIndex(indexPath.row)
+            if let orders = ordersInCart {
+                Orders.saveOrdersToArchive(orders)
+            }
+            // save array to disk
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-        
+            updateTotal()
+        }
+    }
+    
+    func updateTotal() -> Void {
+        if let orders = ordersInCart {
+            var total: Double = 0.0
+            for order in orders {
+                if let price = order.product?.price {
+                    total = total + price
+                }
+            }
+            totalLabel.text = String(total)
         }
     }
 }

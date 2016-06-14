@@ -34,6 +34,24 @@ class ProductViewController: UIViewController {
         guard let product = product, let name = product.name, let price = product.price else {
             return
         }
+        
+        // create an order
+        let order = Order()
+        order.product = product
+        
+        var ordersInCart = Orders.readOrdersFromArchive()
+        
+        if(ordersInCart == nil) {
+            ordersInCart = []
+        }
+        
+        // save order to disk
+        ordersInCart?.append(order)
+        if let orders = ordersInCart {
+            Orders.saveOrdersToArchive(orders)
+        }
+        
+        
         let alertController = UIAlertController(title: "Added to Cart", message: "You added \(name) item to the cart and it costs $\(price)", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         
